@@ -78,7 +78,7 @@ const Register = () => {
   };
   const submitHandler = async () => {
     setLoading(true);
-    if (!name || !email || !password || !confirmpassword || !pic) {
+    if (!name || !email || !password || !confirmpassword) {
       toast({
         title: "Error",
         description: "Please fill all the fields",

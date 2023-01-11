@@ -20,7 +20,9 @@ const Login = () => {
 
   const toast = useToast();
   const history = useHistory();
+
   const handlerClick = () => setShow(!show);
+
   const submitHandler = async () => {
     setLoading(true);
     if (!email || !password) {
@@ -56,6 +58,7 @@ const Login = () => {
         isClosable: true,
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
+      setLoading(false);
       history.push("/chats");
     } catch (error) {
       toast({
