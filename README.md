@@ -28,7 +28,7 @@
   <p align="center">
     a MERN Stack Chat Application
     <br />
-    <a href="https://github.com/maulanadityaa/MERN-Chat"><strong>Explore the docs »</strong></a>
+    <a href="https://lets-get-talk.herokuapp.com/"><strong>Open app »</strong></a>
   </p>
 </p>
 
