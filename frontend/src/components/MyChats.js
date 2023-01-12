@@ -2,7 +2,7 @@ import { AddIcon } from "@chakra-ui/icons";
 import { Avatar, Box, Button, Stack, Text, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { getProfile, getProfilePic, getSender } from "../config/ChatLogic";
+import { getProfilePic, getSender } from "../config/ChatLogic";
 import { ChatState } from "../Context/ChatProvider";
 import ChatLoading from "./ChatLoading";
 import GroupChatModal from "./miscellaneous/GroupChatModal";

@@ -59,7 +59,7 @@ const Login = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      history.push("/chats");
+      history.go("/chats");
     } catch (error) {
       toast({
         title: "Error",
