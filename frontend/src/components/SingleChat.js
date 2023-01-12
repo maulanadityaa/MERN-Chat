@@ -1,6 +1,7 @@
-import { ArrowBackIcon } from "@chakra-ui/icons";
+import { ArrowBackIcon, ArrowRightIcon, EmailIcon } from "@chakra-ui/icons";
 import {
   Box,
+  Button,
   FormControl,
   IconButton,
   Input,
@@ -114,7 +115,10 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   });
 
   const sendMessage = async (event) => {
-    if (event.key === "Enter" && newMessage) {
+    if (
+      (event.key === "Enter" && newMessage) ||
+      (event.type === "click" && newMessage)
+    ) {
       socket.emit("stopTyping", selectedChat._id);
       try {
         const config = {
@@ -242,13 +246,24 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               ) : (
                 <></>
               )}
-              <Input
-                variant="outline"
-                bg="#FFFFFF"
-                placeholder="Enter a message..."
-                onChange={typingHandler}
-                value={newMessage}
-              />
+              <Box display="flex">
+                <Input
+                  variant="outline"
+                  bg="#FFFFFF"
+                  mr={2}
+                  placeholder="Enter a message..."
+                  onChange={typingHandler}
+                  value={newMessage}
+                />
+                <Button
+                  rightIcon={<ArrowRightIcon />}
+                  color="#FFFFFF"
+                  bg="#6892ef"
+                  onClick={sendMessage}
+                >
+                  Send
+                </Button>
+              </Box>
             </FormControl>
           </Box>
         </>
